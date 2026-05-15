@@ -9,11 +9,18 @@ __pycache__/
 venv/
 env/
 
-# Data folders 
+# Database / Caching
+openalex_cache.sqlite
+
+# Data folders (Ignore contents, but track the folders via .gitkeep)
 data/01_raw/*
-data/02_interim/*
 !data/01_raw/.gitkeep
+
+data/02_interim/*
 !data/02_interim/.gitkeep
+
+data/03_processed/*
+!data/03_processed/.gitkeep
 
 # OS generated files
 .DS_Store
@@ -26,4 +33,4 @@ Thumbs.db
 
 # Ignore ephemeral exploratory outputs
 results/sandbox/*
-!results/exploratory/.gitkeep
+!results/sandbox/.gitkeep
