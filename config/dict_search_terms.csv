@@ -1,0 +1,10 @@
+variable_name,description,data_type,allowed_values,required
+list,The macro-level pillar the term belongs to (e.g. context or data).,string,context | data,TRUE
+subgroup,The conceptual grouping for organizing pilot tests and categorizing terms.,string,,TRUE
+term,The exact search string or boolean cluster to be queried.,string,,TRUE
+exclusions,Terms to combine with a NOT operator to reduce noise relative to a given term.,string,,FALSE
+search_field,The specific database field to apply the search term against.,string,default.search | title | abstract | title_and_abstract,FALSE
+source,"The origin or justification for the search term for PRISMA-S documentation (e.g., team brainstorm or paper citation).",string,,FALSE
+date_added,The date the term was added to the search strategy (ideally YYYY-MM-DD).,date,,FALSE
+status,Indicates whether the term is currently being used in active queries or just being evaluated.,string,active | potential | discarded,TRUE
+note,Additional context or rationale regarding the term or its exclusions.,string,,FALSE
