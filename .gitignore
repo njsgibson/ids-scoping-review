@@ -34,3 +34,6 @@ Thumbs.db
 # Ignore ephemeral exploratory outputs
 results/sandbox/*
 !results/sandbox/.gitkeep
+
+# ASReview project files
+*.asreview
