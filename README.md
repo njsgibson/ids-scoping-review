@@ -7,7 +7,7 @@ This repository contains the search strings, data gathering scripts, and raw dat
 * `config/`: Contains the master search strategy parameters (`search_terms.csv`) and its machine-readable data dictionary (`dict_search_terms.csv`).
 * `data/`: 
   * `01_raw/`: Raw CSV outputs downloaded directly from the OpenAlex API.
-  * `02_interim/`: Cleaned, deduplicated datasets, and LLM-classified outputs.
+  * `02_interim/`: Deduplicated datasets and LLM-classified outputs.
   * `03_processed/`: Final datasets ready for full-text review.
 * `scripts/`: Sequentially numbered Python scripts for querying, fetching, processing, and classifying literature metadata using LLMs.
 * `notebooks/`: Jupyter notebooks for exploratory data analysis, keyword co-occurrence, and hit-count visualizations.
@@ -45,7 +45,9 @@ Run these scripts sequentially from the root directory to generate the final dat
 
 * `scripts/01_fetch_records.py` - Executes the finalized search strings against the OpenAlex API, using caching and pagination to download raw article metadata into `data/01_raw/`.
 * `scripts/02_deduplicate_records.py` - Cleans the raw data by removing exact ID matches, shared DOIs, and overlapping normalized titles/authors, keeping the highest-priority publication type (e.g., peer-reviewed articles over preprints). Outputs the deduplicated dataset to `data/02_interim/`.
-* `scripts/03_classify_abstracts.py` - Passes the deduplciated titles and abstracts to the Gemini 2.5 Flash API for automated screening and multi-dimensional classification based on the review protocol.
+* `scripts/03_classify_abstracts.py` - Passes the deduplicated titles and abstracts to the Gemini 2.5 Flash API for automated screening and multi-dimensional classification based on the review protocol.
+* `scripts/04_summarize_results.py` - Reports on number of records with each classification.
+* `scripts/05_export_to_ris.py` - Exports target `.csv` dataset into `.ris` format suitable for import into Zotero.
 
 ### 2. Exploration & Analysis
 These files were used to iteratively refine the search strategy and explore the dataset. 
@@ -53,4 +55,5 @@ These files were used to iteratively refine the search strategy and explore the 
 * `notebooks/01_explore_hit_counts.ipynb` - Jupyter notebook used for initial search term testing, term-frequency analysis, and keyword co-occurrence analysis.
 * `scripts/explore_02_generate_heatmap.py` - Creates a visual heatmap (`results/sandbox/term_heatmap_log_grid.png`) mapping search terms against disciplines and OpenAlex concepts.
 * `scripts/explore_03_build_dashboard.py`: builds a local HTML DataTables explorer (`results/sandbox/explorer.html`) with regex highlighting, ad-hoc searching, dynamic year-range filtering, and real-time term frequency counts.
-* `scripts/explore_filter_years.py` - Filters the deduplicated dataset by publication year (e.g., 2016 or newer).
+* `scripts/explore_filter_years.py` - Filters the deduplicated dataset by publication year (e.g., 2013 or newer).
+* `scripts/sample_records.py` - Creates a random sample of records from a target data file, e.g., for pilot work.

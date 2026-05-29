@@ -18,7 +18,7 @@ class ClassificationResult(BaseModel):
     q3_diagnostics_frameworks: bool = Field(description="Does it propose macroscopic frameworks OR diagnose structural challenges? (True/False)")
     q4_narratives: bool = Field(description="Does it evaluate or tell the story of an implemented effort? (True/False)")
     rationale: str = Field(
-        description="1-4 sentences explaining the answers to the 4 questions. If Q1 is false, explain why it failed the scope gate and do not explain the others."
+        description="1-4 sentences explaining the answers to the 4 questions. If Q1 is false, explicitly explain why it failed the scope gate and do not explain the others."
     )
 
 def load_prompt(filepath: str) -> str:
@@ -81,7 +81,6 @@ async def process_row(index, row, client, system_prompt, df, semaphore, save_loc
             state['completed'] += 1
             # Save progressively every 50 completed records to reduce disk I/O
             if state['completed'] % 50 == 0:
-                # Run the synchronous save in a background thread so it doesn't block other API calls
                 await asyncio.to_thread(df.to_csv, output_path, index=False)
         
         # Tick the progress bar
@@ -106,8 +105,10 @@ async def async_main():
     
     client = genai.Client(http_options=http_options)
     
-    input_path = project_root / "data" / "02_interim" / "openalex_records_2016_present.csv"
-    output_path = project_root / "data" / "02_interim" / "classified_2016_present.csv"
+    input_path = project_root / "data" / "02_interim" / "openalex_records_deduped.csv"
+    output_path = project_root / "data" / "02_interim" / "classified_all.csv"
+    # input_path = project_root / "data" / "02_interim" / "pilot_sample.csv"
+    # output_path = project_root / "data" / "02_interim" / "classified_pilot.csv"
     prompt_path = project_root / "prompts" / "03_classify.md"
 
     print(f"Loading system prompt from {prompt_path}...")
@@ -122,7 +123,14 @@ async def async_main():
         exit(1)
 
     # Ensure classification columns exist
-    cols_to_add = {"q1_scope": False, "q2_overview": False, "q3_diagnostics_frameworks": False, "q4_narratives": False, "rationale": "", "error_log": ""}
+    cols_to_add = {
+        "q1_scope": False, 
+        "q2_overview": False, 
+        "q3_diagnostics_frameworks": False, 
+        "q4_narratives": False, 
+        "rationale": "", 
+        "error_log": ""
+    }
     for col, default_val in cols_to_add.items():
         if col not in df.columns:
             df[col] = default_val
@@ -143,8 +151,13 @@ async def async_main():
 
     # CALCULATE REMAINING WORK
     def needs_processing(row):
-        val = row.get("rationale")
-        return not (pd.notna(val) and str(val).strip() not in ["", "ERROR during processing.", "Auto-excluded: No abstract provided."])
+        """Explicitly flag rows that need to be processed or retried."""
+        val = str(row.get("rationale")).strip()
+        if pd.isna(row.get("rationale")) or val == "nan" or val == "":
+            return True
+        if val == "ERROR during processing.":
+            return True
+        return False
 
     # Filter down to only the rows that need API calls
     rows_to_process = df[df.apply(needs_processing, axis=1)]

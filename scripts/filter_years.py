@@ -5,8 +5,8 @@ import pandas as pd
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 
-INPUT_FILE = os.path.join(PROJECT_ROOT, "data", "02_interim", "openalex_records_deduped.csv")
-OUTPUT_FILE = os.path.join(PROJECT_ROOT, "data", "02_interim", "openalex_records_2016_present.csv")
+INPUT_FILE = os.path.join(PROJECT_ROOT, "data", "02_interim", "classified_all.csv")
+OUTPUT_FILE = os.path.join(PROJECT_ROOT, "data", "02_interim", "classified_2013_present.csv")
 
 def main():
     print("Loading deduplicated dataset...")
@@ -22,13 +22,13 @@ def main():
     # 1. Ensure publication_year is a number (coercing any weird data to NaN)
     df['publication_year'] = pd.to_numeric(df['publication_year'], errors='coerce')
     
-    # 2. Filter for 2016 and newer
-    filtered_df = df[df['publication_year'] >= 2016]
+    # 2. Filter for 2013 and newer
+    filtered_df = df[df['publication_year'] >= 2013]
     
     final_count = len(filtered_df)
     dropped_count = initial_count - final_count
     
-    print(f"Applying temporal filter (>= 2016)...")
+    print(f"Applying temporal filter (>= 2013)...")
     print(f"Dropped {dropped_count} legacy records.")
     print(f"New review record count: {final_count}")
     
