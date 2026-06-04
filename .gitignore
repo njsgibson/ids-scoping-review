@@ -37,3 +37,6 @@ results/sandbox/*
 
 # ASReview project files
 *.asreview
+
+# general prompts
+prompts/00_system_context.md

@@ -1,19 +1,19 @@
 # Scoping Review Protocol: Interdisciplinary Data Stewardship
 
 ## 1. Rationale and Objectives
-The objective of this scoping review is to identify and map existing precedents for interdisciplinary data stewardship in any academic domain. By analyzing how cross-disciplinary teams successfully negotiate and govern shared data infrastructure (e.g., data commons, metadata schemas, ontologies), this review aims to extract operational models that can be adapted for the development of a FAIR-compliant data commons for the scientific study of religion.
+The objective of this scoping review is to identify and map precedents for interdisciplinary data stewardship in any academic domain. By analyzing how cross-disciplinary teams successfully negotiated and established shared data infrastructure (e.g., data commons, metadata schemas, ontologies) and governance, this review aims to extract lessons that could be adapted for the development of a FAIR-compliant data commons for the scientific study of religion.
 
 ## 2. Information Sources and Search Strategy
-The OpenAlex database was used as the sole information source, accessed programmatically via the OpenAlex API on May 27, 2026. The search targeted works classified as articles, preprints, book chapters, books, and dissertations.
+The OpenAlex database was used as the sole information source, accessed programmatically via the OpenAlex API on May 27, 2026. The search targeted works classified as articles, preprints, book chapters, books, dissertations, and conference proceedings.
 
-The search strategy was constructed around two primary conceptual buckets:
-1.  **Context (Bucket 1):** Terms related to cross-disciplinary collaboration (e.g., interdisciplinary, multidisciplinary).
-2.  **Data Stewardship (Bucket 2):** Terms related to data infrastructure and governance (e.g., data commons, ontology, metadata, interoperability).
+The search strategy was constructed around two conceptual buckets:
+1.  **1. Context:** Terms related to cross-disciplinary collaboration (e.g., interdisciplinary, multidisciplinary);
+2.  **2. Data stewardship:** Terms related to data interoperability and data management (e.g., semantic binding, metadata, data standards, data repository).
 
 **Methodological Decision Log: Search Term Refinement**
-Initial lists of potential search terms were generated manually and expanded with the assistance of a Large Language Model (Gemini). To refine this list, the research team conducted an exploratory hit-count analysis in OpenAlex, generating a heatmap to identify and exclude overly noisy terms (e.g., `taxonom*`, `ontolog*`). Due to limitations in OpenAlex's ElasticSearch syntax regarding wildcards in compound phrases, specific search terms were exploded to explicitly query various spelling and morphological variations (e.g., "knowledge organization system" OR "knowledge organization systems" OR "knowledge organisation system" OR "knowledge organisation systems").
+Initial lists of potential search terms were generated manually and expanded with the assistance of a Large Language Model (Gemini). To refine this list, the research team conducted an exploratory hit-count analysis by generating a heatmap to identify and remove overly noisy terms (e.g., `taxonom*`, `ontolog*`). Due to limitations in OpenAlex's ElasticSearch syntax regarding wildcards in compound phrases, specific search terms were exploded to explicitly query various spelling and morphological variations (e.g., "knowledge organization system" OR "knowledge organization systems" OR "knowledge organisation system" OR "knowledge organisation systems").
 
-To balance sensitivity and precision, the API queries used a strict field-search logic. OpenAlex keywords were ignored. A paper was included in the initial pull if it met one of the following conditions:
+To balance sensitivity and precision, the API queries used a strict field-search logic. OpenAlex keywords were ignored. A work was included in the initial pull if it met one of the following conditions:
 * At least one term from Bucket 1 in the **Title** AND at least one term from Bucket 2 in the **Title or Abstract**
 * At least one term from Bucket 2 in the **Title** AND at least one term from Bucket 1 in the **Title or Abstract**
 
