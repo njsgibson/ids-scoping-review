@@ -1,0 +1,69 @@
+Query_Type,Context_Subgroup,Context_Term,Data_Subgroup,Data_Term,Hit_Count
+ANY Context AND Specific Data,ANY,ANY,infrastructure,"""data commons""",26
+ANY Context AND Specific Data,ANY,ANY,infrastructure,"""knowledge commons""",19
+ANY Context AND Specific Data,ANY,ANY,infrastructure,"(""data infrastructure"" OR ""data infrastructures"")",269
+ANY Context AND Specific Data,ANY,ANY,infrastructure,"(""information infrastructure"" OR ""information infrastructures"")",165
+ANY Context AND Specific Data,ANY,ANY,infrastructure,"(""knowledge infrastructure"" OR ""knowledge infrastructures"")",69
+ANY Context AND Specific Data,ANY,ANY,infrastructure,"(""data repository"" OR ""data repositories"" OR ""dataset repository"" OR ""dataset repositories"")",139
+ANY Context AND Specific Data,ANY,ANY,infrastructure,"(""data portal"" OR ""data portals"")",43
+ANY Context AND Specific Data,ANY,ANY,infrastructure,"(""community data system"" OR ""community data systems"")",1
+ANY Context AND Specific Data,ANY,ANY,infrastructure,"(""community infrastructure project"" OR ""community infrastructure projects"")",1
+ANY Context AND Specific Data,ANY,ANY,interoperability,"(""data harmonization"" OR ""data harmonisation"" OR ""data harmonizability"" OR ""data harmonisability"")",21
+ANY Context AND Specific Data,ANY,ANY,interoperability,"(""construct harmonization"" OR ""construct harmonisation"" OR ""construct harmonizability"" OR ""construct harmonisability"")",0
+ANY Context AND Specific Data,ANY,ANY,interoperability,"""data integration""",371
+ANY Context AND Specific Data,ANY,ANY,interoperability,"""FAIR data integration""",2
+ANY Context AND Specific Data,ANY,ANY,interoperability,"(""data interoperability"" OR ""interoperable data"" OR ""interoperable datasets"")",60
+ANY Context AND Specific Data,ANY,ANY,interoperability,"""catalog interoperability""",1
+ANY Context AND Specific Data,ANY,ANY,interoperability,"""data discovery""",65
+ANY Context AND Specific Data,ANY,ANY,interoperability,"(""data connectivity"" OR ""connecting data"" OR ""connect data"")",18
+ANY Context AND Specific Data,ANY,ANY,KOS,"(""knowledge organization system"" OR ""knowledge organization systems"" OR ""knowledge organisation system"" OR ""knowledge organisation systems"")",28
+ANY Context AND Specific Data,ANY,ANY,KOS,(ontology OR ontologies),3071
+ANY Context AND Specific Data,ANY,ANY,KOS,"(""ontological mapping"" OR ""ontological mappings"")",6
+ANY Context AND Specific Data,ANY,ANY,KOS,"(""knowledge graph"" OR ""knowledge graphs"")",396
+ANY Context AND Specific Data,ANY,ANY,KOS,"""semantic interoperability""",59
+ANY Context AND Specific Data,ANY,ANY,KOS,"""semantic binding""",2
+ANY Context AND Specific Data,ANY,ANY,KOS,"""semantic linking""",8
+ANY Context AND Specific Data,ANY,ANY,KOS,"(""semantic modeling"" OR ""semantic modelling"")",67
+ANY Context AND Specific Data,ANY,ANY,KOS,"""semantic web""",290
+ANY Context AND Specific Data,ANY,ANY,KOS,"""linked open data""",43
+ANY Context AND Specific Data,ANY,ANY,KOS,"(""controlled vocabulary"" OR ""controlled vocabularies"")",38
+ANY Context AND Specific Data,ANY,ANY,KOS,thesaur*,114
+ANY Context AND Specific Data,ANY,ANY,KOS,crosswalk*,20
+ANY Context AND Specific Data,ANY,ANY,KOS,"(""metadata crosswalk"" OR ""metadata crosswalks"")",0
+ANY Context AND Specific Data,ANY,ANY,management,"(""data steward"" OR ""data stewards"" OR ""data stewardship"" OR ""data stewarding"")",48
+ANY Context AND Specific Data,ANY,ANY,management,"""data governance""",156
+ANY Context AND Specific Data,ANY,ANY,management,"(""data management"" OR ""data manager"" OR ""data managers"")",1046
+ANY Context AND Specific Data,ANY,ANY,management,"""data sharing""",543
+ANY Context AND Specific Data,ANY,ANY,management,"(""data reuse"" OR ""data reusability"")",46
+ANY Context AND Specific Data,ANY,ANY,management,"(""FAIR principles"" OR ""FAIR guiding principles"" OR ""FAIR data"" OR ""FAIR datasets"")",166
+ANY Context AND Specific Data,ANY,ANY,metadata,metadata,748
+ANY Context AND Specific Data,ANY,ANY,metadata,"""variable level metadata""",0
+ANY Context AND Specific Data,ANY,ANY,metadata,"""item level metadata""",0
+ANY Context AND Specific Data,ANY,ANY,metadata,"(""common data element"" OR ""common data elements"")",31
+ANY Context AND Specific Data,ANY,ANY,metadata,"(""shared terminology"" OR ""shared terminologies"")",9
+ANY Context AND Specific Data,ANY,ANY,metadata,"(""standardized keyword"" OR ""standarized keywords"")",1
+ANY Context AND Specific Data,ANY,ANY,metadata,"(""data dictionary"" OR ""data dictionaries"")",11
+ANY Context AND Specific Data,ANY,ANY,metadata,codebook*,35
+ANY Context AND Specific Data,ANY,ANY,standards,"(""data standard"" OR ""data standards"" OR ""data standardization"" OR ""data standardisation"")",77
+ANY Context AND Specific Data,ANY,ANY,standards,"(""consensus standard"" OR ""consensus standards"")",8
+ANY Context AND Specific Data,ANY,ANY,standards,"(""community standard"" OR ""community standards"")",22
+ANY Context AND Specific Data,ANY,ANY,standards,"(""community endorsed standard"" OR ""community endorsed standards"")",0
+ANY Context AND Specific Data,ANY,ANY,standards,"(""shared schema"" OR ""shared schemas"")",3
+Specific Context AND ANY Data,boundaries,"(crossdisciplin* OR ""cross disciplinary"" OR ""cross discipline"")",ANY,ANY,427
+Specific Context AND ANY Data,boundaries,"(interdisciplin* OR ""inter disciplinary"" OR ""inter discipline"")",ANY,ANY,2867
+Specific Context AND ANY Data,boundaries,"(multidisciplin* OR ""multi disciplinary"" OR ""multi discipline"")",ANY,ANY,1892
+Specific Context AND ANY Data,boundaries,"(transdisciplin* OR ""trans disciplinary"" OR ""trans discipline"")",ANY,ANY,538
+Specific Context AND ANY Data,boundaries,"""convergence research""",ANY,ANY,9
+Specific Context AND ANY Data,metascience,"""research on research""",ANY,ANY,496
+Specific Context AND ANY Data,metascience,"""science of science""",ANY,ANY,240
+Specific Context AND ANY Data,metascience,"(metascien* OR ""meta science"" OR ""meta scientific"")",ANY,ANY,65
+Specific Context AND ANY Data,metascience,"(metaresearch OR ""meta research"")",ANY,ANY,38
+Specific Context AND ANY Data,collaborative,"""team science""",ANY,ANY,46
+Specific Context AND ANY Data,collaborative,"(""science of team science"" OR SciTS)",ANY,ANY,3
+Specific Context AND ANY Data,collaborative,"""boundary spanning""",ANY,ANY,9
+Specific Context AND ANY Data,collaborative,"(""community of practice"" OR ""communities of practice"")",ANY,ANY,384
+Specific Context AND ANY Data,STS,"""sociology of science""",ANY,ANY,35
+Specific Context AND ANY Data,STS,"""science and technology studies""",ANY,ANY,135
+Specific Context AND ANY Data,STS,"(""epistemic culture"" OR ""epistemic cultures"")",ANY,ANY,7
+Specific Context AND ANY Data,STS,"(""boundary object"" OR ""boundary objects"")",ANY,ANY,53
+Specific Context AND ANY Data,STS,"(sociotechnical OR ""socio technical"")",ANY,ANY,775

@@ -199,7 +199,7 @@ def main():
         writer.writeheader()
         writer.writerows(all_records)
         
-    print("Download complete! Your raw data is ready for deduplication (03_deduplicate_records.py).")
+    print("Download complete! Your raw data is ready for deduplication (02_deduplicate_records.py).")
 
 if __name__ == "__main__":
     main()

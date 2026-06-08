@@ -42,20 +42,20 @@ def summarize_classification(input_file: Path):
 
     # Print the Summary Report
     print("="*50)
-    print(" 📊 CLASSIFICATION SUMMARY REPORT")
+    print("CLASSIFICATION SUMMARY REPORT")
     print("="*50)
     print(f"Total Records in File:        {total_records}")
     print(f"  - Auto-Excluded (No abstract): {auto_excluded}")
     print(f"  - API Errors/Failed Rows:      {errors}")
     print(f"  - Successfully Classified:     {successfully_processed}")
     print("-" * 50)
-    print(" 🚪 Q1 GATEKEEPER (Out of successfully classified)")
+    print("Q1 GATEKEEPER (Out of successfully classified)")
     print(f"  - Out of Scope (Q1=False):     {out_of_scope_count}")
     print(f"  - IN SCOPE (Q1=True):          {in_scope_count}")
     print("-" * 50)
     
     if in_scope_count > 0:
-        print(" 🏷️  CATEGORIZATIONS (For IN SCOPE papers only)")
+        print("CATEGORIZATIONS (For IN SCOPE papers only)")
         print(f"  - Q2 (Overviews):              {q2_count} ({q2_count/in_scope_count:.1%})")
         print(f"  - Q3 (Diagnostics/Frameworks): {q3_count} ({q3_count/in_scope_count:.1%})")
         print(f"  - Q4 (Narratives/Histories):   {q4_count} ({q4_count/in_scope_count:.1%})")
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--input", 
         type=str, 
-        default="data/02_interim/classified_2013_present.csv", 
+        default="data/02_interim/classified_all.csv", 
         help="Path to the classified CSV file."
     )
     args = parser.parse_args()

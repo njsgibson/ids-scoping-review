@@ -13,14 +13,10 @@ env/
 openalex_cache.sqlite
 
 # Data folders (Ignore contents, but track the folders via .gitkeep)
-data/01_raw/*
-!data/01_raw/.gitkeep
-
-data/02_interim/*
-!data/02_interim/.gitkeep
-
 data/03_processed/*
 !data/03_processed/.gitkeep
+
+data/pilot/*
 
 # OS generated files
 .DS_Store
@@ -30,10 +26,6 @@ data/03_processed/*
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-# Ignore ephemeral exploratory outputs
-results/sandbox/*
-!results/sandbox/.gitkeep
 
 # ASReview project files
 *.asreview
