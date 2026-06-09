@@ -41,13 +41,15 @@ This project uses the OpenAlex and Gemini APIs. You must create a `.env` file in
 To ensure strict reproducibility, the workflow is divided into the core data pipeline and exploratory tools.
 
 ### 1. Core Data Workflow
-Run these scripts sequentially from the root directory to generate the final dataset from the OpenAlex API.
+Run these scripts sequentially from the root directory to generate a dataset of screened records.
 
 * `scripts/01_fetch_records.py` - Executes the finalized search strings against the OpenAlex API, using caching and pagination to download raw article metadata into `data/01_raw/`.
 * `scripts/02_deduplicate_records.py` - Cleans the raw data by removing exact ID matches, shared DOIs, and overlapping normalized titles/authors, keeping the highest-priority publication type (e.g., peer-reviewed articles over preprints). Outputs the deduplicated dataset to `data/02_interim/`.
 * `scripts/03_classify_abstracts.py` - Passes the deduplicated titles and abstracts to the Gemini 2.5 Flash API for automated screening and multi-dimensional classification based on the review protocol.
 * `scripts/04_summarize_results.py` - Reports on number of records with each classification.
-* `scripts/05_export_to_ris.py` - Exports target `.csv` dataset into `.ris` format suitable for import into Zotero.
+* `scripts/05_filter_years.py` - Filter classified records to those with a publication year of 2013 or more recent.
+* `scripts/06_enrich_metadata.py` - Collects enhanced metadata for screened records from OpenAlex API.
+* `scripts/07_export_to_ris.py` - Exports target `.csv` dataset into `.ris` format suitable for import into Zotero.
 
 ### 2. Exploration & Analysis
 These files were used to iteratively refine the search strategy and explore the dataset. 

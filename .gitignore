@@ -12,10 +12,7 @@ env/
 # Database / Caching
 openalex_cache.sqlite
 
-# Data folders (Ignore contents, but track the folders via .gitkeep)
-data/03_processed/*
-!data/03_processed/.gitkeep
-
+# Local data folders
 data/pilot/*
 
 # OS generated files
